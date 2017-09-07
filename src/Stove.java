@@ -17,10 +17,13 @@ public class Stove {
 	 * You must write the following method
 	 */
 	public void displayStove() {
-
+		for(Burner b : burners){
+			System.out.println("[" + b.getMySetting() + "]....." + b.getMyTemp());
+		}
+		System.out.println("\n");
 	}
 	
-	/*public void turnBurnersUp() {
+	public void turnBurnersUp() {
 		// Press the + button 3 times, burner 0 now HIGH
 		burners.get(0).plusButton();
 		burners.get(0).plusButton();
@@ -50,12 +53,13 @@ public class Stove {
 		burners.get(3).plusButton();
 	}	
 	
-	public void timePassing(int numMinutes) {
+	/*public void timePassing(int numMinutes) {
 		// Each loop simulates one time unit (e.g., minute)
 		for (int i=0; i<numMinutes; i++)
 			for (Burner burner : burners)
 				burner.updateTemperature();
 	}*/
+	
 	public static void main(String[] args) {
 		/*Stove stove = new Stove();
 		System.out.println("Beginning stove state ");
@@ -78,7 +82,10 @@ public class Stove {
 		stove.displayStove();	*/
 		
 		Stove stove = new Stove();
-		System.out.println(stove);
+		stove.displayStove();
+		stove.turnBurnersUp();
+		stove.displayStove();
+		
 	}
 
 }
