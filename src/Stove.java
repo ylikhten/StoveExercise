@@ -53,15 +53,15 @@ public class Stove {
 		burners.get(3).plusButton();
 	}	
 	
-	/*public void timePassing(int numMinutes) {
+	public void timePassing(int numMinutes) {
 		// Each loop simulates one time unit (e.g., minute)
 		for (int i=0; i<numMinutes; i++)
 			for (Burner burner : burners)
 				burner.updateTemperature();
-	}*/
+	}
 	
 	public static void main(String[] args) {
-		/*Stove stove = new Stove();
+		Stove stove = new Stove();
 		System.out.println("Beginning stove state ");
 		stove.displayStove();
 		stove.turnBurnersUp();
@@ -79,11 +79,6 @@ public class Stove {
 		stove.displayStove();
 		stove.timePassing(1);
 		System.out.println("\nStove in final state ");
-		stove.displayStove();	*/
-		
-		Stove stove = new Stove();
-		stove.displayStove();
-		stove.turnBurnersUp();
 		stove.displayStove();
 		
 	}

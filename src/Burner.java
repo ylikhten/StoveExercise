@@ -65,4 +65,36 @@ public class Burner {
 				break;
 		}
 	}
+	
+	public void updateTemperature(){
+		timer++;
+		if(timer % TIME_DURATION == 0){
+			if(myTemp == Temperature.BLAZING){
+				if(mySetting != Setting.HIGH){
+					myTemp = Temperature.HOT;
+				}
+			}
+			else if(myTemp == Temperature.HOT){
+				if(mySetting == Setting.HIGH){
+					myTemp = Temperature.BLAZING;
+				} 
+				else if(mySetting == Setting.OFF || mySetting == Setting.LOW){
+					myTemp = Temperature.WARM;
+				}
+			}
+			else if(myTemp == Temperature.WARM){
+				if(mySetting == Setting.HIGH || mySetting == Setting.MEDIUM){
+					myTemp = Temperature.HOT;
+				}
+				else if(mySetting == Setting.OFF){
+					myTemp = Temperature.COLD;
+				}
+			}
+			else{
+				if(mySetting != Setting.OFF){
+					myTemp = Temperature.WARM;
+				}
+			}
+		}
+	}
 }
