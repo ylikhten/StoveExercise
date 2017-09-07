@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 
-
 public class Stove {
 	// Our stove will have 4 burners
 	public final static int NUM_BURNERS = 4;
@@ -17,10 +16,14 @@ public class Stove {
 	 * You must write the following method
 	 */
 	public void displayStove() {
+		boolean burnerHot = false;
 		for(Burner b : burners){
-			System.out.println("[" + b.getMySetting() + "]....." + b.getMyTemp());
+			if(b.getMyTemp() == Burner.Temperature.BLAZING){
+				burnerHot = true;
+			}
+			b.display();
 		}
-		System.out.println("\n");
+		if(burnerHot) System.out.println("RED LIGHT - HOT BURNER ALERT");
 	}
 	
 	public void turnBurnersUp() {

@@ -1,7 +1,7 @@
 
 public class Burner {
 
-	private enum Temperature{
+	enum Temperature{
 		BLAZING("Very HOT! DON'T TOUCH"), HOT("CAREFUL"), WARM("warm"), COLD("cooool");
 		
 		String temperature;
@@ -96,5 +96,9 @@ public class Burner {
 				}
 			}
 		}
+	}
+	
+	public void display(){
+		System.out.println("[" + mySetting + "]....." + myTemp);
 	}
 }
